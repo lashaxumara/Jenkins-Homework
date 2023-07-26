@@ -6,13 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="untitled" />
-        <module name="Jenkins-Homework" />
+        <module name="selenium-homework" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Jenkins-Homework" target="11" />
-      <module name="untitled" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
