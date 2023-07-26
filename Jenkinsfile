@@ -5,29 +5,40 @@ pipeline {
       parallel {
         stage('check Mvn version') {
           steps {
-            sh 'mvn --version'
-          }
-        }
-
-        stage('Run mvn project') {
-          steps {
             sh '''pipeline {
     agent any
     stages {
-        stage(\'Build\') {
+        stage(\'Check Maven Version\') {
             steps {
-                sh \'mvn clean package\'
+                bat \'mvn --version\'
             }
         }
-  
+      
     }
 }
 '''
             }
           }
 
+          stage('Run mvn project') {
+            steps {
+              sh '''pipeline {
+    agent any
+    stages {
+        stage(\'Check Maven Version\') {
+            steps {
+                bat \'mvn clean package\'
+            }
         }
-      }
-
+     
     }
-  }
+}
+'''
+              }
+            }
+
+          }
+        }
+
+      }
+    }
