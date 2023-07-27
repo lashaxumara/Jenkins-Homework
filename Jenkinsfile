@@ -3,18 +3,24 @@ pipeline {
   stages {
     stage('maven') {
       parallel {
-        stage('maven version') {
+        stage('mvn version') {
           steps {
-            sh 'mvn --version'
+            powershell(script: 'mvn --version', returnStatus: true)
           }
         }
 
-        stage('run projedct') {
+        stage('compile mvn project') {
           steps {
-            sh 'mvn clean test'
+            powershell(script: 'mvn compile', returnStatus: true)
           }
         }
 
+      }
+    }
+
+    stage('End') {
+      steps {
+        echo 'The end...'
       }
     }
 
