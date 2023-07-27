@@ -8,7 +8,7 @@ pipeline {
           steps {
             script {
               def mvnHome = tool 'Maven 3.9.3'
-              sh "${mvnHome}/bin/mvn --version"
+              bat "${mvnHome}\\bin\\mvn --version"
             }
           }
         }
@@ -17,7 +17,7 @@ pipeline {
           steps {
             script {
               def mvnHome = tool 'Maven 3.9.3'
-              sh "${mvnHome}/bin/mvn compile"
+              bat "${mvnHome}\\bin\\mvn compile"
             }
           }
         }
