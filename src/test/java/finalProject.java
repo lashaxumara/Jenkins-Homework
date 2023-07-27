@@ -22,9 +22,8 @@ public class finalProject {
 
     @BeforeMethod
     public void beforMethod() {
-        ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
-        driver = new ChromeDriver(options);
+    
+        driver = new ChromeDriver();
         action = new Actions(driver);
         js = (JavascriptExecutor) driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
